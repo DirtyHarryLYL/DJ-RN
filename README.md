@@ -109,6 +109,7 @@ python script/rotate_sampling_test.py --smplx_path <path of the smplx model> --r
 `python script/transfer_py3-py2.py --res <Path to your SMPLify-X result>`
 
 ### 3D Human-Object Interaction Volume Generation and Visualization
+
 TBD
 
 ### Extract feature using PointNet
