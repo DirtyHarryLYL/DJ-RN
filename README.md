@@ -163,8 +163,9 @@ python ./-Results/Generate_detection.py --model <your test output directory, und
 `python ./-Results/Evaluate_HICO_DET.py --file ./-Results/400000_DJR_ambiguous.pkl`
 
 ## TODOS
-- [x] Ambiguous-HOI data
+- [x] Ambiguous-HOI data and evaluation
 - [x] Full model
+- [ ] 3D human-object generation and visualization
 - [ ] Lite model
 
 ## Acknowledgement
