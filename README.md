@@ -15,6 +15,9 @@ As a part of [HAKE](http://hake-mvig.cn) project (HAKE-3D). Code for our CVPR202
     <img src="misc/att_3D.png", height="200">
 </p>
 
+## Ambiguous-HOI
+TBD
+
 ## Results on HICO-DET and Ambiguous-HOI
 
 **Our results on HICO-DET dataset, using object detections from iCAN (COCO pre-trained detector)**
@@ -104,6 +107,9 @@ python script/rotate_sampling_test.py --smplx_path <path of the smplx model> --r
 7. Transfer the results to fit in Python 2.7
 
 `python script/transfer_py3-py2.py --res <Path to your SMPLify-X result>`
+
+### 3D Human-Object Interaction Volume Generation and Visualization
+TBD
 
 ### Extract feature using PointNet
 
