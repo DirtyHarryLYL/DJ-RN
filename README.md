@@ -19,18 +19,18 @@ As a part of HAKE project (HAKE-3D). Code for our CVPR2020 paper "Detailed 2D-3D
 
 |Method| Full(def) | Rare(def) | None-Rare(def)| Full(ko) | Rare(ko) | None-Rare(ko) |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-|iCAN    | 19.61 | 17.29 | 20.30 | 22.10 | 20.46 | 22.59 |
-|TIN     | 17.03 | 13.42 | 18.11 | 19.17 | 15.51 | 20.26 |
-|Analogy | 19.40 | 14.60 | 20.90 | - | - | - |
+|iCAN(BMVC2018)    | 19.61 | 17.29 | 20.30 | 22.10 | 20.46 | 22.59 |
+|TIN(CVPR2019)     | 17.03 | 13.42 | 18.11 | 19.17 | 15.51 | 20.26 |
+|Analogy(ICCV2019) | 19.40 | 14.60 | 20.90 | - | - | - |
 |DJ-RN   | 21.34 | 18.53 | 22.18 | 23.69 | 20.64 | 24.60 |
 
 **Our results on Ambiguous-HOI**
 
 |Method| mAP |
 |:---:|:---:|
-|iCAN    | 8.14 |
-|TIN     | 8.22 |
-|Analogy | 9.72 |
+|iCAN(BMVC2018)    | 8.14 |
+|TIN(CVPR2019)     | 8.22 |
+|Analogy(ICCV2019) | 9.72 |
 |DJ-RN   | 10.37 |
 
 ## Getting Started
