@@ -15,7 +15,7 @@ As a part of HAKE project (HAKE-3D). Code for our CVPR2020 paper "Detailed 2D-3D
 
 ## Results on HICO-DET and Ambiguous-HOI
 
-**Our results on HICO-DET dataset, using object detections from iCAN**
+**Our results on HICO-DET dataset, using object detections from iCAN (COCO pre-trained detector)**
 
 |Method| Full(def) | Rare(def) | None-Rare(def)| Full(ko) | Rare(ko) | None-Rare(ko) |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|
