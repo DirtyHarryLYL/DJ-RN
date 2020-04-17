@@ -19,19 +19,19 @@ As a part of HAKE project (HAKE-3D). Code for our CVPR2020 paper "Detailed 2D-3D
 
 |Method| Full(def) | Rare(def) | None-Rare(def)| Full(ko) | Rare(ko) | None-Rare(ko) |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-|iCAN(BMVC2018)    | 19.61 | 17.29 | 20.30 | 22.10 | 20.46 | 22.59 |
-|TIN(CVPR2019)     | 17.03 | 13.42 | 18.11 | 19.17 | 15.51 | 20.26 |
-|Analogy(ICCV2019) | 19.40 | 14.60 | 20.90 | - | - | - |
-|DJ-RN   | 21.34 | 18.53 | 22.18 | 23.69 | 20.64 | 24.60 |
+|iCAN (BMVC2018)    | 19.61 | 17.29 | 20.30 | 22.10 | 20.46 | 22.59 |
+|TIN (CVPR2019)     | 17.03 | 13.42 | 18.11 | 19.17 | 15.51 | 20.26 |
+|Analogy (ICCV2019) | 19.40 | 14.60 | 20.90 | - | - | - |
+|DJ-RN (CVPR2020)  | 21.34 | 18.53 | 22.18 | 23.69 | 20.64 | 24.60 |
 
 **Our results on Ambiguous-HOI**
 
 |Method| mAP |
 |:---:|:---:|
-|iCAN(BMVC2018)    | 8.14 |
-|TIN(CVPR2019)     | 8.22 |
-|Analogy(ICCV2019) | 9.72 |
-|DJ-RN   | 10.37 |
+|iCAN (BMVC2018)    | 8.14 |
+|TIN (CVPR2019)     | 8.22 |
+|Analogy (ICCV2019) | 9.72 |
+|DJ-RN (CVPR2020)  | 10.37 |
 
 ## Getting Started
 
@@ -159,3 +159,16 @@ python ./-Results/Generate_detection.py --model <your test output directory, und
 6. To evaluate the performance of our model on Ambiguous-HOI, run 
 
 `python ./-Results/Evaluate_HICO_DET.py --file ./-Results/400000_DJR_ambiguous.pkl`
+
+## TODOS
+- [x] Ambiguous-HOI data
+- [x] Full model
+- [ ] Lite model
+
+## Acknowledgement
+
+Some of the codes are built upon [Interactiveness](https://github.com/DirtyHarryLYL/Transferable-Interactiveness-Network). 
+
+If you get any problems or if you find any bugs, don't hesitate to comment on GitHub or make a pull request! 
+
+DJ-RN is freely available for free non-commercial use, and may be redistributed under these conditions. For commercial queries, please drop an e-mail. We will send the detail agreement to you.
