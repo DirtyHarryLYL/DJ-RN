@@ -4,7 +4,7 @@ As a part of HAKE project (HAKE-3D). Code for our CVPR2020 paper "Detailed 2D-3D
 
 - Paper is here: [arXiv]()
 - Single-view human detailed shape reconstruction, 2D & 3D pose and detailed shape from [OpenPose](https://github.com/CMU-Perceptual-Computing-Lab/openpose) and [SMPLify-X](https://github.com/vchoutas/smplify-x).
-- Interacted object 3D location-size recovering.
+- Interacted object 3D location-size recovering as hollow sphere.
 - 2D-3D joint human bodt part attention.
 - Multi-modal representation for HOI detection.
 
