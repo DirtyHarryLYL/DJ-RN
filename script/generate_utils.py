@@ -323,6 +323,14 @@ def get_param(result, hbox, obox, htri, img, radius=None, gamma_min=None, gamma_
         verts[i][1] += point[1]
         verts[i][2] += point[2]
     otri = trimesh.Trimesh(vertices=verts, faces=faces)
+    hbox[0] += camera_center[0]
+    hbox[1] += camera_center[1]
+    hbox[2] += camera_center[0]
+    hbox[3] += camera_center[1]
+    obox[0] += camera_center[0]
+    obox[1] += camera_center[1]
+    obox[2] += camera_center[0]
+    obox[3] += camera_center[1]
     return otri, verts
 
 def rotate_mul(verts, rotate):
