@@ -340,7 +340,7 @@ def rotate_mul(verts, rotate):
 
 def rotate(joints):
     s = np.array([0., 1., 0.])
-    l = np.sqrt(s * s)
+    l = np.sqrt(np.sum(s * s))
     x = s[0] / l
     y = s[1] / l
     z = s[2] / l

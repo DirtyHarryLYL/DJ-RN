@@ -67,7 +67,7 @@ for key in data.keys():
         
 
         joints = get_joints(args,torch.FloatTensor(torch.from_numpy(vertice.reshape(1,-1,3))))
-        ansp = rotate(joints)
+        ansp = rotate(joints - joints[0])
 
         obj_file = os.path.join(args.obj_path, 'HICO_train2015_%08d/object_%03d.pkl' % (key, i))
         obj_vertice = np.array(pickle.load(open(obj_file, 'rb'),encoding='latin1'))
@@ -79,9 +79,8 @@ for key in data.keys():
         vertice = vertice[vertex_choice,:]
 
         pick_vertex = np.vstack((vertice,obj_vertice))
-        pick_vertex = rotate_mul(pick_vertex, ansp)
-        joints = rotate_mul(joints, ansp)
         pick_vertex = pick_vertex - joints[0]
+        pick_vertex = rotate_mul(pick_vertex, ansp)
         
         file_path = os.path.join(args.save_path, 'HICO_train2015_%08d/%03d.pkl' % (key, i))
         f = open(file_path,'wb') 
