@@ -16,7 +16,42 @@ As a part of [HAKE](http://hake-mvig.cn) project (HAKE-3D). Code for our CVPR202
 </p>
 
 ## Ambiguous-HOI
-TBD
+
+This repo contains the code for the proposed Ambiguous-HOI dataset. 
+
+To collect the data set, run
+
+```Shell
+bash script/Generate_Ambiguous_HOI.sh
+```
+
+After running this, the data and code related to Ambiguous-HOI would be organized as:
+
+```bash
+DJ-RN
+├──Data
+    ├── Ambiguous_HOI
+        └── ...                  # The jpeg image files
+    └── Test_ambiguous.pkl       # Person and object boudning boxes used by DJ-RN
+└── -Results
+    ├── gt_ambiguous_hoi_new.pkl # Annotation file
+    └── Evaluate_HICO_DET.py     # Evaluation script
+```
+
+Run `python ./-Results/Evaluate_ambiguous.py <your detection file> <path to save the result>` to evaluate the performace. The detection file should be a pickle file with format of 
+```python
+{'xxx.jpg': # image file name
+    [
+        [x1, y1, x2, y2],        # Human bounding box
+        [x1, y1, x2, y2],        # Object bounding box
+        x,                       # Object category, 1~80
+        np.array([xx, ..., xx]), # HOI detection score, np.array with size of (600,)
+        x,                       # Human detection confidence
+        x,                       # Object detection confidence
+    ], 
+    ...
+}
+```
 
 ## Results on HICO-DET and Ambiguous-HOI
 
@@ -71,13 +106,13 @@ models
 
 `models/smplx` will be referred to as `smplx_path` in the following instruction.
 
-4. Download pretrained weight of our model. (Optional)
+5. Download pretrained weight of our model. (Optional)
 
 ```Shell
 bash script/Download_weight.sh
 ```
 
-5. Download inference results of our model. (Optional)
+6. Download inference results of our model. (Optional)
 
 ```Shell
 bash script/Download_result.sh
@@ -108,7 +143,7 @@ python script/assign_pose_Neg.py --pose <path to your pose used for SMPLify-X> -
 python script/assign_pose_test.py --pose <path to your pose used for SMPLify-X> --res <path to your SMPLify-X result>
 ```
 
-6. Generate 3D spatial configuration. We also provide a Jupyter Notebook demo for quick start in [script/Demo.ipynb](script/Demo.ipynb).
+6. Generate 3D spatial configuration. 
 
 ```Shell
 python script/generate_3D_obj_GT.py --smplx_path <path of the smplx model> --res <path to your SMPLify-X result> --img_path <path to your HICO train image>  --save_obj_path <path to save your object mesh and pkl>  
@@ -125,7 +160,7 @@ python script/rotate_sampling_test.py --smplx_path <path of the smplx model> --r
 
 ### 3D Human-Object Interaction Volume Generation and Visualization
 
-TBD
+We provide a Jupyter Notebook demo for quick start in [script/Demo.ipynb](script/Demo.ipynb).
 
 ### Extract feature using PointNet
 
@@ -182,12 +217,12 @@ python ./-Results/Generate_detection.py --model <your test output directory, und
 
 6. To evaluate the performance of our model on Ambiguous-HOI, run 
 
-`python ./-Results/Evaluate_HICO_DET.py --file ./-Results/400000_DJR_ambiguous.pkl`
+`python ./-Results/Evaluate_ambiguous.py ./-Results/400000_DJR_ambiguous.pkl DJR_ambiguous/`
 
 ## TODOS
 - [x] Ambiguous-HOI data and evaluation
 - [x] Full model
-- [ ] 3D human-object generation and visualization
+- [x] 3D human-object generation and visualization
 - [ ] Lite model
 
 ## Acknowledgement
