@@ -324,3 +324,84 @@ def get_param(result, hbox, obox, htri, img, radius=None, gamma_min=None, gamma_
         verts[i][2] += point[2]
     otri = trimesh.Trimesh(vertices=verts, faces=faces)
     return otri, verts
+
+def rotate_mul(verts, rotate):
+    rot = np.insert(verts, 3, values = 1, axis = 1)
+    ret = np.dot(rot, rotate)
+    return ret[:,:3]
+
+def rotate(joints):
+    s = np.array([0., 1., 0.])
+    l = np.sqrt(s * s)
+    x = s[0] / l
+    y = s[1] / l
+    z = s[2] / l
+    
+    a = 0
+    b = 0
+    c = 0
+
+    u = x
+    v = y
+    w = z
+    uu = u * u
+    uv = u * v
+    uw = u * w
+    vv = v * v
+    vw = v * w
+    ww = w * w
+    au = a * u
+    av = a * v
+    aw = a * w
+    bu = b * u
+    bv = b * v
+    bw = b * w
+    cu = c * u
+    cv = c * v
+    cw = c * w
+
+    ansp = np.zeros((4,4))
+    ans = 1000
+
+    for i in range(1,1800):
+      pi = math.acos(-1)
+      ang = pi / 1800 * i
+ 
+      v1 = joints[16]
+      v2 = joints[17]
+      
+      sinA = math.sin(ang)
+      cosA = math.cos(ang)
+      costheta = cosA
+      sintheta = sinA
+      p = np.zeros((4,4))
+      p[0][0] = uu + (vv + ww) * costheta
+      p[0][1] = uv * (1 - costheta) + w * sintheta
+      p[0][2] = uw * (1 - costheta) - v * sintheta
+      p[0][3] = 0
+
+      p[1][0] = uv * (1 - costheta) - w * sintheta
+      p[1][1] = vv + (uu + ww) * costheta
+      p[1][2] = vw * (1 - costheta) + u * sintheta
+      p[1][3] = 0
+
+      p[2][0] = uw * (1 - costheta) + v * sintheta
+      p[2][1] = vw * (1 - costheta) - u * sintheta
+      p[2][2] = ww + (uu + vv) * costheta
+      p[2][3] = 0
+
+      p[3][0] = (a * (vv + ww) - u * (bv + cw)) * (1 - costheta) + (bw - cv) * sintheta
+      p[3][1] = (b * (uu + ww) - v * (au + cw)) * (1 - costheta) + (cu - aw) * sintheta
+      p[3][2] = (c * (uu + vv) - w * (au + bv)) * (1 - costheta) + (av - bu) * sintheta
+      p[3][3] = 1
+
+      v1 = v1.reshape(1,3)
+      v2 = v2.reshape(1,3)
+      rotv1 = np.dot(np.insert(v1, 3, values=1, axis=1),p)
+      rotv2 = np.dot(np.insert(v2, 3, values=1, axis=1),p)
+
+      if (abs(rotv1[0][2] - rotv2[0][2]) < ans):
+        ans = abs(rotv1[0][2] - rotv2[0][2])
+        ansp = p
+
+    return ansp
