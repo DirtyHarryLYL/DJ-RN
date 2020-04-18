@@ -114,8 +114,8 @@ def calc_ap(anno, scores, bboxes, keys, hoi_id, begin):
             ap += np.max(prec[mask]) / 11.0
     return ap, np.max(rec)
 
-def Generate_HICO_detection(HICO, HICO_DIR):
-    anno = pickle.load(open('gt_ambiguous_hoi_new.pkl', 'rb'))
+def Generate_ambi_detection(ambi, ambi_DIR):
+    anno = pickle.load(open('gt_ambiguous_hoi.pkl', 'rb'))
     keys, scores, bboxes, hdet, odet = [], [], [], [], []
 
     for i in range(80):
@@ -125,7 +125,7 @@ def Generate_HICO_detection(HICO, HICO_DIR):
         hdet.append([])
         odet.append([])
 
-    for key, value in HICO.items():
+    for key, value in ambi.items():
         for element in value:
             classid = element[2] - 1
             keys[classid].append(key)
@@ -157,9 +157,9 @@ def Generate_HICO_detection(HICO, HICO_DIR):
             map[hoi_id], mrec[hoi_id] = calc_ap(anno, scores[i][select], bboxes[i][select], keys[i][select], hoi_id, begin)
             if hoi_id not in ambiguous:
                 continue
-    pickle.dump({'ap':map, 'rec':mrec}, open(HICO_DIR + '/eval_def_res.pkl', 'wb'))
+    pickle.dump({'ap':map, 'rec':mrec}, open(ambi_DIR + '/eval_def_res.pkl', 'wb'))
 
-    f = open(HICO_DIR + '/eval_result.txt', 'w')
+    f = open(ambi_DIR + '/eval_result.txt', 'w')
     f.write("mAP: %.4f, mRec: %.4f" % (float(np.nanmean(map)), float(np.nanmean(mrec))))
     f.close()
 
@@ -169,13 +169,13 @@ def Generate_HICO_detection(HICO, HICO_DIR):
 
 def main():
     output_file = sys.argv[1]
-    HICO_dir = sys.argv[2]
+    ambi_dir = sys.argv[2]
     
-    HICO = pickle.load(open(output_file, "rb"), encoding='latin1')
+    ambi = pickle.load(open(output_file, "rb"))
     print("Pickle loaded")
-    if not os.path.exists(HICO_dir):
-        os.mkdir(HICO_dir)
-    Generate_HICO_detection(HICO, HICO_dir)
+    if not os.path.exists(ambi_dir):
+        os.mkdir(ambi_dir)
+    Generate_ambi_detection(ambi, ambi_dir)
 
 if __name__ == '__main__':
     main()
