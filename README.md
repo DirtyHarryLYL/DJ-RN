@@ -56,6 +56,21 @@ bash script/Download_HICO-DET.sh
 bash script/Generate_Ambiguous_HOI.sh
 ```
 
+4. Download SMPL-X model referring to [this link](https://github.com/vchoutas/smplx#downloading-the-model), and unzip and organize the directory structure as follows:
+
+```bash
+models
+├── smplx
+    ├── SMPLX_FEMALE.npz
+    ├── SMPLX_FEMALE.pkl
+    ├── SMPLX_MALE.npz
+    ├── SMPLX_MALE.pkl
+    ├── SMPLX_NEUTRAL.npz
+    └── SMPLX_NEUTRAL.pkl
+```
+
+`models/smplx` will be referred to as `smplx_path` in the following instruction.
+
 4. Download pretrained weight of our model. (Optional)
 
 ```Shell
@@ -93,7 +108,7 @@ python script/assign_pose_Neg.py --pose <path to your pose used for SMPLify-X> -
 python script/assign_pose_test.py --pose <path to your pose used for SMPLify-X> --res <path to your SMPLify-X result>
 ```
 
-6. Generate 3D spatial configuration
+6. Generate 3D spatial configuration. We also provide a Jupyter Notebook demo for quick start in [script/Demo.ipynb](script/Demo.ipynb).
 
 ```Shell
 python script/generate_3D_obj_GT.py --smplx_path <path of the smplx model> --res <path to your SMPLify-X result> --img_path <path to your HICO train image>  --save_obj_path <path to save your object mesh and pkl>  
