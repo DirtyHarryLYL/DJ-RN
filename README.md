@@ -79,7 +79,7 @@ Run `python ./-Results/Evaluate_ambiguous.py <your detection file> <path to save
 
 1. Clone this repository.
 
-2. Download HICO-DET dataset and detection files. (The detection results (person and object boudning boxes) are collected from: iCAN: Instance-Centric Attention Network for Human-Object Interaction Detection [website]).
+2. Download HICO-DET dataset and detection files. The detection results (person and object boudning boxes) are collected from: [iCAN](http://chengao.vision/iCAN/).
 
 ```Shell
 bash script/Download_HICO-DET.sh
