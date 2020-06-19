@@ -61,7 +61,7 @@ Run `python ./-Results/Evaluate_ambiguous.py <your detection file> <path to save
 
 |Method| Full(def) | Rare(def) | None-Rare(def)| Full(ko) | Rare(ko) | None-Rare(ko) |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-|iCAN (BMVC2018)    | 19.61 | 17.29 | 20.30 | 22.10 | 20.46 | 22.59 |
+|iCAN (BMVC2018)    | 14.84	| 10.45	| 16.15	| 16.26	| 11.33	| 17.73 |
 |TIN (CVPR2019)     | 17.03 | 13.42 | 18.11 | 19.17 | 15.51 | 20.26 |
 |Analogy (ICCV2019) | 19.40 | 14.60 | 20.90 | - | - | - |
 |DJ-RN (CVPR2020)  | 21.34 | 18.53 | 22.18 | 23.69 | 20.64 | 24.60 |
