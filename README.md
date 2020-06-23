@@ -221,6 +221,17 @@ python ./-Results/Generate_detection.py --model <your test output directory, und
 
 `python ./-Results/Evaluate_ambiguous.py ./-Results/400000_DJR_ambiguous.pkl DJR_ambiguous/`
 
+## Citation
+If you find our work useful, please consider citing:
+```
+@inproceedings{li2020detailed,
+title={Detailed 2D-3D Joint Representation for Human-Object Interaction},
+author={Li, Yong-Lu and Liu, Xinpeng and Lu, Han and Wang, Shiyi and Liu, Junqi and Li, Jiefeng and Lu, Cewu},
+booktitle={CVPR},
+year={2020}
+}
+```
+
 ## TODOS
 - [x] Ambiguous-HOI data and evaluation
 - [x] Full model
