@@ -122,7 +122,7 @@ bash script/Download_result.sh
 
 ### Data generation
 
-1. Run OpenPose for the images in the dataset.
+1. Run OpenPose for the images in the dataset. For HICO-DET, the OpenPose result could be downloaded from [this link](https://drive.google.com/file/d/14QiZSMFLc5FOmkQEHgOY1_E0eM8-60UM/view?usp=sharing).
 
 2. Create the environment used for this phase.
 
