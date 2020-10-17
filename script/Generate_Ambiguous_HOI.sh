@@ -23,6 +23,6 @@ unzip val2014.zip -d vcoco/
 rm train2014.zip
 rm val2014.zip
 
-python script/merge_for_ambi.py
+python merge_for_ambi.py
 
 cd ..
