@@ -2,7 +2,7 @@
 
 As a part of [HAKE](http://hake-mvig.cn) project (HAKE-3D). Code for our CVPR2020 paper "Detailed 2D-3D Joint Representation for Human-Object Interaction".
 
-#### **News**: (2020.10.27) The code of [IDN](https://github.com/DirtyHarryLYL/HAKE-Action-Torch/tree/IDN-(Integrating-Decomposing-Network)) in NeurIPS'20 is released!
+#### **News**: (2020.10.27) The code of [IDN](https://github.com/DirtyHarryLYL/HAKE-Action-Torch/tree/IDN-(Integrating-Decomposing-Network)) ([Paper](https://arxiv.org/abs/2010.16219)) in NeurIPS'20 is released!
 
 **(2020.6.16) Our larger version [HAKE-Large](https://github.com/DirtyHarryLYL/HAKE#hake-large-for-instance-level-hoi-detection) (>120K images, activity and part state labels) is released!**
 
