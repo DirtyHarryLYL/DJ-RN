@@ -62,7 +62,7 @@ class ResNet50():
         self.O_boxes     = tf.placeholder(tf.float32, shape=[None, 5], name='O_boxes')
         self.smplx       = tf.placeholder(tf.float32, shape=[None, 85], name='smplx')
         self.pc          = tf.placeholder(tf.float32, shape=[None, 1228, 384], name='pc')
-        self.pc_att_map  = np.array(att_map, dtype=np.float32)
+        self.pc_att_map  = np.array(att_map, dtype=np.float32).T
         self.att_2D_map  = tf.placeholder(tf.float32, shape=[None, 64, 64, 17])
         self.gt_class_HO = tf.placeholder(tf.float32, shape=[None, 600], name='gt_class_HO')
         self.H_num       = tf.placeholder(tf.int32)
