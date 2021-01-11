@@ -189,6 +189,12 @@ python Feature_extraction.py --input_list script/vertex_path_Neg.txt --model_pat
 python Feature_extraction.py --input_list script/vertex_path_Test.txt --model_path ../Feature_extraction/model_10000.ckpt
 ```
 
+4. Concatenate the extracted feature with the corresponding dim-reduced word vector.
+
+```Shell
+python script/concat_w2v.py --SMPLX_PATH <path to your SMPL-X results> --GT ./Data/Trainval_GT_HICO_with_idx.pkl --Neg Trainval_Neg_HICO_with_idx.pkl --Test Test_Faster_RCNN_R-50-PFN_2x_HICO_DET_with_idx.pkl
+```
+
 ### Experiments with our model
 
 1. Create the environment used for this phase.
