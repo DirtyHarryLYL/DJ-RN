@@ -68,9 +68,9 @@ for key in Trainval_GT:
         obj_holder = np.tile(obj_vec[cur_obj], (312, 1))
         holder = np.concatenate([part_holder, obj_holder], axis=0)
         if os.path.exists(args.SMPLX_PATH + '/results/HICO_train2015_%08d/%03d.pkl' % (key, Trainval_GT[key][i][-1])):
-            pc = pickle.load(open(args.SMPLX_PATH + '/object_GT/HICO_train2015_%08d/%03d_feature.pkl' % i, 'rb'))
+            pc = pickle.load(open(args.SMPLX_PATH + '/object_GT/HICO_train2015_%08d/%03d_feature.pkl' % (key, i), 'rb'))
             pc = np.concatenate([pc, holder], axis=1)
-            pickle.dump(pc, open(args.SMPLX_PATH + '/object_GT/HICO_train2015_%08d/%03d_feature.pkl' % i, 'wb'))
+            pickle.dump(pc, open(args.SMPLX_PATH + '/object_GT/HICO_train2015_%08d/%03d_feature.pkl' % (key, i), 'wb'))
 
 for key in Trainval_Neg:
     for i in range(len(Trainval_Neg[key])): 
@@ -79,9 +79,9 @@ for key in Trainval_Neg:
         obj_holder = np.tile(obj_vec[cur_obj], (312, 1))
         holder = np.concatenate([part_holder, obj_holder], axis=0)
         if os.path.exists(args.SMPLX_PATH + '/results/HICO_train2015_%08d/%03d.pkl' % (key, Trainval_Neg[key][i][-1])):
-            pc = pickle.load(open(args.SMPLX_PATH + '/object_NEG/HICO_train2015_%08d/%03d_feature.pkl' % i, 'rb'))
+            pc = pickle.load(open(args.SMPLX_PATH + '/object_NEG/HICO_train2015_%08d/%03d_feature.pkl' % (key, i), 'rb'))
             pc = np.concatenate([pc, holder], axis=1)
-            pickle.dump(pc, open(args.SMPLX_PATH + '/object_NEG/HICO_train2015_%08d/%03d_feature.pkl' % i, 'wb'))
+            pickle.dump(pc, open(args.SMPLX_PATH + '/object_NEG/HICO_train2015_%08d/%03d_feature.pkl' % (key, i), 'wb'))
 
 for image_id in Test_RCNN:
     for i in range(len(Test_RCNN[image_id])):
