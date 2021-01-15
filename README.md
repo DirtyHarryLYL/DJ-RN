@@ -2,9 +2,11 @@
 
 As a part of [HAKE](http://hake-mvig.cn) project (HAKE-3D). Code for our CVPR2020 paper "Detailed 2D-3D Joint Representation for Human-Object Interaction".
 
-#### **News**: (2020.10.27) The code of [IDN](https://github.com/DirtyHarryLYL/HAKE-Action-Torch/tree/IDN-(Integrating-Decomposing-Network)) ([Paper](https://arxiv.org/abs/2010.16219)) in NeurIPS'20 is released!
+#### **News**: (2021.1.15) Our extended version of [TIN (Transferable Interactiveness Network)](https://github.com/DirtyHarryLYL/Transferable-Interactiveness-Network) is accepted by TPAMI! New paper and code will be released soon.
 
-**(2020.6.16) Our larger version [HAKE-Large](https://github.com/DirtyHarryLYL/HAKE#hake-large-for-instance-level-hoi-detection) (>120K images, activity and part state labels) is released!**
+(2020.10.27) The code of [IDN](https://github.com/DirtyHarryLYL/HAKE-Action-Torch/tree/IDN-(Integrating-Decomposing-Network)) ([Paper](https://arxiv.org/abs/2010.16219)) in NeurIPS'20 is released!
+
+(2020.6.16) Our larger version [HAKE-Large](https://github.com/DirtyHarryLYL/HAKE#hake-large-for-instance-level-hoi-detection) (>120K images, activity and part state labels) is released!
 
 - Paper is here: [arXiv](https://arxiv.org/abs/2004.08154)
 - Single-view human detailed shape reconstruction, 2D & 3D pose and detailed shape from [OpenPose](https://github.com/CMU-Perceptual-Computing-Lab/openpose) and [SMPLify-X](https://github.com/vchoutas/smplify-x).
