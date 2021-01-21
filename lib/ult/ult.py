@@ -258,7 +258,7 @@ def HO_Neg_HICO_3D(Trainval_GT, Trainval_Neg, image_id, Pos_augment, Neg_select)
                                             result['leye_pose'], result['reye_pose'], result['jaw_pose'], result['body_pose'],
                                             result['expression'], result['betas'],
                                         ], axis=1))
-            pc.append(pickle.load(open(config.cfg.SMPLX_PATH + '/object_GT/HICO_train2015_%08d/%03d_feature.pkl' % i, 'rb'))[None, ...])
+            pc.append(pickle.load(open(config.cfg.SMPLX_PATH + '/object_GT/HICO_train2015_%08d/%03d_feature.pkl' % (image_id, i), 'rb'))[None, ...])
         else:
             smplx.append(np.zeros((1, 85)))
             pc.append(np.zeros((1, 1228, 384)))
