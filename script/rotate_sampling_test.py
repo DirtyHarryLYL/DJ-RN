@@ -54,19 +54,20 @@ for key in data.keys():
             if (j == i): continue
             # The structure of item here:
             # item[0]: image id
-            # item[1]: hoi
+            # item[1]: 'Human' of 'Object'
             # item[2]: human bounding box
-            # item[3]: object bounding box
-            # item[4]: useless
-            # item[5]: alphapose
-            # item[6]: openpose index, -1 means none
-            if not os.path.exists(os.path.join(args.res, 'results/HICO_test2015_%08d/%03d.pkl' % (key, i))):
+            # item[3]: nan
+            # item[4]: object category
+            # item[5]: object detection score
+            # item[6]: alphapose
+            # item[7]: openpose index, -1 means none
+            if not os.path.exists(os.path.join(args.res, 'results/HICO_test2015_%08d/%03d.pkl' % (key, item[7]))):
                     continue
-            result = pickle.load(open(os.path.join(args.res, 'results/HICO_test2015_%08d/%03d.pkl' % (key, i)), 'rb'),encoding='latin1')
+            result = pickle.load(open(os.path.join(args.res, 'results/HICO_test2015_%08d/%03d.pkl' % (key, item[7])), 'rb'), encoding='latin1')
             hbox = item[2]
             obox = item2[2]
 
-            mesh       = os.path.join(args.res, 'meshes/HICO_test2015_%08d/%03d.obj' % (key, i))
+            mesh       = os.path.join(args.res, 'meshes/HICO_test2015_%08d/%03d.obj' % (key, item[7]))
             htri       = trimesh.load_mesh(mesh)
             vertice    = np.array(htri.vertices,dtype=np.float32)
             
