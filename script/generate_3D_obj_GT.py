@@ -48,9 +48,9 @@ for key in data.keys():
         # item[4]: useless
         # item[5]: alphapose
         # item[6]: openpose index, -1 means none
-        if not os.path.exists(os.path.join(args.res, 'results/HICO_train2015_%08d/%03d.pkl' % (key, i))):
+        if not os.path.exists(os.path.join(args.res, 'results/HICO_train2015_%08d/%03d.pkl' % (key, item[6]))):
             continue
-        result = pickle.load(open(os.path.join(args.res, 'results/HICO_train2015_%08d/%03d.pkl' % (key, i)), 'rb'),encoding='latin1')
+        result = pickle.load(open(os.path.join(args.res, 'results/HICO_train2015_%08d/%03d.pkl' % (key, item[6])), 'rb'),encoding='latin1')
         hbox = item[2]
         obox = item[3]
         hoi_class = item[1][0]
