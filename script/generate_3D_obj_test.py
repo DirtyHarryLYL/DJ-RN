@@ -54,17 +54,17 @@ for key in data.keys():
             # item[6]: alphapose
             # item[7]: openpose index, -1 means none
 
-            if not os.path.exists(os.path.join(args.res, 'results/HICO_test2015_%08d/%03d.pkl' % (key, i))):
+            if not os.path.exists(os.path.join(args.res, 'results/HICO_test2015_%08d/%03d.pkl' % (key, item[7]))):
                     continue
 
-            result = pickle.load(open(os.path.join(args.res, 'results/HICO_test2015_%08d/%03d.pkl' % (key, i)), 'rb'))
+            result = pickle.load(open(os.path.join(args.res, 'results/HICO_test2015_%08d/%03d.pkl' % (key, item[7])), 'rb'))
             hbox = item[2]
             obox = item2[2]
 
             obj_name = order_obj_list[item2[4]] 
 
 
-            mesh       = os.path.join(args.res, 'meshes/HICO_test2015_%08d/%03d.obj' % (key, i))
+            mesh       = os.path.join(args.res, 'meshes/HICO_test2015_%08d/%03d.obj' % (key, item[7]))
             htri       = trimesh.load_mesh(mesh)
             vertice    = np.array(htri.vertices,dtype=np.float32)
             
