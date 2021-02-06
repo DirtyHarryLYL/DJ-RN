@@ -549,7 +549,7 @@ class ResNet50():
 
             A_2D = self.predictions['A_2D']
             A_3D = self.predictions['A_3D']
-            L_att = tf.reduce_mean(A_2D * tf.log(A_2D / A_3D))
+            L_att = tf.reduce_mean(A_2D * tf.log(tf.clip_by_value(A_2D / A_3D, 1e-8, 50.0)))
 
             self.losses['L_cls/H_cross_entropy']  = H_cross_entropy
             self.losses['L_cls/O_cross_entropy']  = O_cross_entropy
