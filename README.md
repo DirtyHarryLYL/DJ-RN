@@ -234,7 +234,7 @@ python ./-Results/Generate_detection.py --model <your test output directory, und
 
 ## Tips
 1. As the data generation pipeline is long, you may find some useful common quetions in the [issues](https://github.com/DirtyHarryLYL/DJ-RN/issues?q=is%3Aissue+is%3Aclosed).
-2. NaN loss: sometimes the training is not stable due to the align loss that needs careful tuning. We also recommend the simpler **MSE loss** instead that can also achieve decent performance and easier to train the whole model. More please refer to this [issue](https://github.com/DirtyHarryLYL/DJ-RN/issues/31#issuecomment-775306108).
+2. NaN loss: sometimes the training is not stable due to the align loss that needs careful tuning. We also recommend the **MSE loss** instead of KL divergence that can also achieve decent performance and is easier to train. More please refer to this [issue](https://github.com/DirtyHarryLYL/DJ-RN/issues/31#issuecomment-775306108).
 
 ## Citation
 If you find our work useful, please consider citing:
