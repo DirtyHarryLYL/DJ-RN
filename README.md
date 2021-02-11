@@ -9,6 +9,7 @@ As a part of [HAKE](http://hake-mvig.cn) project (HAKE-3D). Code for our CVPR202
 (2020.6.16) Our larger version [HAKE-Large](https://github.com/DirtyHarryLYL/HAKE#hake-large-for-instance-level-hoi-detection) (>120K images, activity and part state labels) is released!
 
 - Paper is here: [arXiv](https://arxiv.org/abs/2004.08154)
+- **PyTorch version** is [here](https://github.com/DirtyHarryLYL/HAKE-Action-Torch/tree/DJ-RN-Torch) (work in progress)
 - Single-view human detailed shape reconstruction, 2D & 3D pose and detailed shape from [OpenPose](https://github.com/CMU-Perceptual-Computing-Lab/openpose) and [SMPLify-X](https://github.com/vchoutas/smplify-x).
 - Interacted object 3D location-size recovering as hollow sphere.
 - 2D-3D joint human body part attention.
@@ -231,6 +232,10 @@ python ./-Results/Generate_detection.py --model <your test output directory, und
 
 `python ./-Results/Evaluate_ambiguous.py ./-Results/400000_DJR_ambiguous.pkl DJR_ambiguous/`
 
+## Tips
+1. As the data generation pipeline is long, you may find some useful common quetions in the [issues](https://github.com/DirtyHarryLYL/DJ-RN/issues?q=is%3Aissue+is%3Aclosed).
+2. NaN loss: sometimes the training is not stable due to the align loss that needs careful tuning. We also recommend the simpler **MSE loss** instead that can also achieve decent performance and easier to train the whole model. More please refer to this [issue](https://github.com/DirtyHarryLYL/DJ-RN/issues/31#issuecomment-775306108).
+
 ## Citation
 If you find our work useful, please consider citing:
 ```
@@ -246,7 +251,7 @@ year={2020}
 - [x] Ambiguous-HOI data and evaluation
 - [x] Full model
 - [x] 3D human-object generation and visualization
-- [ ] Lite model
+- [ ] New and upgraded PyTorch version
 
 ## Acknowledgement
 
