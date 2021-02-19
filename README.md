@@ -7,7 +7,7 @@ As a part of [HAKE](http://hake-mvig.cn) project (HAKE-3D). Code for our CVPR202
     <img src="https://github.com/DirtyHarryLYL/HAKE-Action-Torch/blob/Activity2Vec/demo/a2v-demo.gif", height="400">
 </p>
 
-## Full demo: [[YouTube]](https://t.co/hXiAYPXEuL?amp=1)
+## Full demo: [[YouTube]](https://t.co/hXiAYPXEuL?amp=1), [[bilibili]](https://www.bilibili.com/video/BV1s54y1Y76s)
 
 (2021.1.15) Our extended version of [TIN (Transferable Interactiveness Network)](https://arxiv.org/abs/2101.10292) is accepted by TPAMI! New paper and code will be released soon.
 
