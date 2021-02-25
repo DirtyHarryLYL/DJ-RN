@@ -46,18 +46,20 @@ for key in data.keys():
         # item[2]: human bounding box
         # item[3]: object bounding box
         # item[4]: useless
-        # item[5]: alphapose
-        # item[6]: openpose index, -1 means none
-        if not os.path.exists(os.path.join(args.res, 'results/HICO_train2015_%08d/%03d.pkl' % (key, item[6]))):
-                continue
-        result = pickle.load(open(os.path.join(args.res, 'results/HICO_train2015_%08d/%03d.pkl' % (key, item[6])), 'rb'),encoding='latin1')
+        # item[5]: useless
+        # item[6]: useless
+        # item[7]: alphapose
+        # item[8]: openpose index, -1 means none
+        if not os.path.exists(os.path.join(args.res, 'results/HICO_train2015_%08d/%03d.pkl' % (key, item[8]))):
+             continue
+        result = pickle.load(open(os.path.join(args.res, 'results/HICO_train2015_%08d/%03d.pkl' % (key, item[8])), 'rb'),encoding='latin1')
         hbox = item[2]
         obox = item[3]
         hoi_class = item[1]
         obj_name = list_hoi[hoi_class][0]    
 
 
-        mesh       = os.path.join(args.res, 'meshes/HICO_train2015_%08d/%03d.obj' % (key, item[6]))
+        mesh       = os.path.join(args.res, 'meshes/HICO_train2015_%08d/%03d.obj' % (key, item[8]))
         htri       = trimesh.load_mesh(mesh)
         vertice    = np.array(htri.vertices,dtype=np.float32)
         
