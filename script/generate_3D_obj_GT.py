@@ -57,7 +57,7 @@ for key in data.keys():
         obj_name = list_hoi[hoi_class][0]    
 
 
-        mesh       = os.path.join(args.res, 'meshes/HICO_train2015_%08d/%03d.obj' % (key, i))
+        mesh       = os.path.join(args.res, 'meshes/HICO_train2015_%08d/%03d.obj' % (key, item[6]))
         htri       = trimesh.load_mesh(mesh)
         vertice    = np.array(htri.vertices,dtype=np.float32)
         
