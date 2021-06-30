@@ -74,7 +74,7 @@ for key in Trainval_GT:
 
 for key in Trainval_Neg:
     for i in range(len(Trainval_Neg[key])): 
-        hoi_class = Trainval_Neg[key][i][1][0]
+        hoi_class = Trainval_Neg[key][i][1]
         cur_obj   = mapping[hoi_class]
         obj_holder = np.tile(obj_vec[cur_obj], (312, 1))
         holder = np.concatenate([part_holder, obj_holder], axis=0)
